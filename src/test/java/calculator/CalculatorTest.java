@@ -7,7 +7,7 @@ public class CalculatorTest {
 
     @Test
     void acceptanceTest(){
-        Calculator calculator = new Calculator();
+        CalculatorImpl calculator = new CalculatorImpl();
         calculator.enter(5);
         assertEquals(5, calculator.getResult());
 

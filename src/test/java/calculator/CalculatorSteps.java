@@ -4,11 +4,11 @@ import io.cucumber.java.en.*;
 
 public class CalculatorSteps {
     private int res = 0;
-    private Calculator calculator;
+    private CalculatorImpl calculator;
 
     @Given("I have a Calculator")
     public void iHaveACalculator() {
-        this.calculator = new Calculator();
+        this.calculator = new CalculatorImpl();
     }
 
     @When("I add {int} and {int}")

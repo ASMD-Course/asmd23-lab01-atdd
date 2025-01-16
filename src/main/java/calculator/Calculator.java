@@ -16,6 +16,18 @@ public interface Calculator {
     void add() throws IllegalStateException;
 
     /**
+     * Subtract the first two entries of the stack
+     * @throws IllegalStateException if the operation is performed with less than two numbers
+     */
+    void subtract() throws IllegalStateException;
+
+    /**
+     * Multiply the first two entries of the stack
+     * @throws IllegalStateException if the operation is performed with less than two numbers
+     */
+    void multiply() throws IllegalStateException;
+
+    /**
      * Return the result of the previous operation
      * @return the integer result of the previous operation
      * @throws IllegalStateException if a result isn't available

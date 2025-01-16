@@ -20,7 +20,23 @@ public class CalculatorSteps {
     @Then("the sum should be {int}")
     public void theSumShouldBe(int arg0) {
         this.calculator.add();
-        if (arg0 != this.calculator.getResult()) { // or using Junit's asserts
+        if (arg0 != this.calculator.getResult()) {
+            throw new IllegalStateException();
+        }
+    }
+
+    @Then("the multiplication should be {int}")
+    public void theMultiplicationShouldBe(Integer arg0) {
+        this.calculator.multiply();
+        if (arg0 != this.calculator.getResult()) {
+            throw new IllegalStateException();
+        }
+    }
+
+    @Then("the subtraction should be {int}")
+    public void theSubtractionShouldBe(Integer arg0) {
+        this.calculator.subtract();
+        if (arg0 != this.calculator.getResult()) {
             throw new IllegalStateException();
         }
     }

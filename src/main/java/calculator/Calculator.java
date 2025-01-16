@@ -1,29 +1,24 @@
 package calculator;
 
-import java.util.*;
+public interface Calculator {
 
-public class Calculator {
-    private List<Integer> numbers = new LinkedList<>();
+    /**
+     * Enter a number in the stack
+     * @param i the number to enter
+     * @throws IllegalStateException if user tries to enter more than 2 number
+     */
+    void enter(int i) throws IllegalStateException;
 
-    public void enter(int i){
-        numbers.add(i);
-        if (numbers.size() > 2){
-            throw new IllegalStateException();
-        }
-    }
+    /**
+     * Add the first two entries of the stack
+     * @throws IllegalStateException if the operation is performed with less than two numbers
+     */
+    void add() throws IllegalStateException;
 
-    public void add(){
-        if (numbers.size() != 2){
-            throw new IllegalStateException();
-        }
-        numbers.set(0, numbers.get(0) + numbers.get(1));
-        numbers.remove(1);
-    }
-
-    public int getResult(){
-        if (numbers.size() != 1){
-            throw new IllegalStateException();
-        }
-        return numbers.get(0);
-    }
+    /**
+     * Return the result of the previous operation
+     * @return the integer result of the previous operation
+     * @throws IllegalStateException if a result isn't available
+     */
+    int getResult() throws IllegalStateException;
 }
